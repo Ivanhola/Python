@@ -1,8 +1,8 @@
 import os
 import pandas
 
-print("File path is: "+ os.getcwd())
-print(os.listdir())
-csvFile1 = pandas.read_csv("supermarkets.csv")
+fileLocation = os.path.realpath(os.path.join(os.getcwd(), os.path.dirname(__file__))) #this gets the current location reliably
+
+csvFile1 = pandas.read_csv(os.path.join(fileLocation, "supermarkets.csv"))
 
 print(csvFile1)
