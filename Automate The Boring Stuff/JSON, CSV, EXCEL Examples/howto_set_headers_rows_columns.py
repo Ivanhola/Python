@@ -25,3 +25,18 @@ print()
 print()
 print("New File with index set: ")
 print(csvFile2)
+
+
+#Retrieving specific Data from this DataFrame, Index 1 through 3, City to Country
+print(csvFile2.loc["1":"3", "City":"Country"])
+print()
+
+#More common way to get data, by filtering through rows and columns using iloc Row:Column position based
+print(csvFile2.iloc[0:4,0:3])
+
+#Deleting Rows 1 is columns, 0 is rows
+print(csvFile2.drop("City",1))
+
+#Can delete using positions as well
+print(csvFile2.drop(csvFile2.columns[0:3], 1)) #Colmuns
+print(csvFile2.drop(csvFile2.index[0:3], 0)) #Rows
