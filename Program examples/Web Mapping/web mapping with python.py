@@ -22,9 +22,8 @@ for lat in volcanoesLAT:
     for lon in volcanoesLON:
         
         fg.add_child(folium.Marker(location=[lat,lon], popup="I'm a marker", icon=folium.Icon(color="green")))
-        map.add_child(fg)
 
-#map.add_child(fg)
+map.add_child(fg)
 
 map.save("index.html")
 
