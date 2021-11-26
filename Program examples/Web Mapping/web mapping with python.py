@@ -17,9 +17,15 @@ volcanoesLAT= list(volcanoCoords["LAT"])
 volcanoesLON= list(volcanoCoords["LON"])
 elevationData= list(volcanoCoords["ELEV"])
 
+html = """<h4>Volcano information:</h4>
+Height: %s m
+
+"""
+
 #Nested for loop getting lat and long
 for lat, lon, el in zip(volcanoesLAT,volcanoesLON, elevationData):
-    fg.add_child(folium.Marker(location=[lat,lon], popup=str(el) + " m.", icon=folium.Icon(color="green")))
+    iframe = folium.IFrame(html=html % str(el), width=200, height=100)
+    fg.add_child(folium.Marker(location=[lat,lon], popup=folium.Popup(iframe), icon=folium.Icon(color="green")))
 
 map.add_child(fg)
 
