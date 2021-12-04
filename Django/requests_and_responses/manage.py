@@ -20,3 +20,8 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+#TO make changes to the database follow these steps: 
+# Change your models (in models.py).
+# Run python3 manage.py makemigrations to create migrations for those changes
+# Run python3 manage.py migrate to apply those changes to the database.
