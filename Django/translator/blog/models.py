@@ -15,3 +15,4 @@ class Post(models.Model):
     #Foreign key means the data will come from another table (User)
     author = models.ForeignKey(to=User, on_delete=models.CASCADE)
     status = models.IntegerField(choices=STATUS, default = 0)
+
